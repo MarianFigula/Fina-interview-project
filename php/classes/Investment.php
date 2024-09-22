@@ -67,6 +67,8 @@ class Investment
     public function setDateOfCreation($date_of_creation) {
         $this->date_of_creation = $date_of_creation;
     }
+
+    // READ
     public function getInvestments() {
         if (!file_exists('investments.json')) {
             return [];
@@ -85,6 +87,7 @@ class Investment
         return null;
     }
 
+    // CREATE
     public function createInvestment($investment) {
         $investments = $this->getInvestments();
         $investments[] = $investment;
@@ -93,6 +96,18 @@ class Investment
 
     public function saveInvestments($investments) {
         file_put_contents('investments.json', json_encode($investments, JSON_PRETTY_PRINT));
+    }
+
+    // UPDATE
+    public function updateInvestment($updatedInvestment) {
+        $investments = $this->getInvestments();
+        foreach ($investments as $key => $investment) {
+            if ($investment['id'] == $updatedInvestment['id']) {
+                $investments[$key] = $updatedInvestment;
+                break;
+            }
+        }
+        $this->saveInvestments($investments);
     }
 
 }
