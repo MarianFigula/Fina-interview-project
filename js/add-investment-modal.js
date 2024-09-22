@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     dialog.addEventListener('click', function(event) {
         if (event.target === dialog || event.target === closeDialogButton) {
+            clearErrors()
             dialog.close();
         }
     });
@@ -20,6 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
     investmentForm.onsubmit = function(event) {
         event.preventDefault();
 
+        if (!validateForm()) {
+            return
+        }
         const title = document.getElementById('title').value;
         const price = document.getElementById('price').value;
         const type = document.getElementById('type').value;
