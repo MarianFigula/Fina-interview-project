@@ -42,7 +42,7 @@ dialog button {
     margin-right: 10px;
 }
 
-dialog button[type="submit"] {
+.btn-proceed{
     background-color: var(--green);
     color: white;
     transition: all 0.3s ease;
