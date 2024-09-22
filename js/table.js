@@ -48,43 +48,40 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Delete investment at index: ' + index);
         });
     });
+
+
+    function openEditDialog(index, investment) {
+        const dialog = document.getElementById('addInvestmentDialog');
+        const titleInput = document.getElementById('title');
+        const priceInput = document.getElementById('price');
+        const typeSelect = document.getElementById('type');
+        const submitButton = document.querySelector('.btn-proceed');
+
+        // Update dialog content
+        dialog.querySelector('h2').textContent = 'Upraviť investíciu';
+        submitButton.innerHTML = 'Aktualizovať';
+        submitButton.classList.replace('btn-proceed', 'btn-edit')
+
+        titleInput.value = investment.title;
+        priceInput.value = investment.value;
+        typeSelect.value = investment.type;
+
+        dialog.showModal();
+
+        submitButton.onclick = function() {
+            // Update investment data logic here
+            investment.title = titleInput.value;
+            investment.value = priceInput.value;
+            investment.type = typeSelect.value;
+
+            saveInvestments(investmentData);
+
+            dialog.close();
+            location.reload();
+        };
+    }
+
+    function saveInvestments(investments) {
+        localStorage.setItem('investments', JSON.stringify(investments));
+    }
 });
-
-
-function openEditDialog(index, investment) {
-    const dialog = document.getElementById('addInvestmentDialog');
-    const titleInput = document.getElementById('title');
-    const priceInput = document.getElementById('price');
-    const typeSelect = document.getElementById('type');
-    const submitButton = document.querySelector('.btn-proceed');
-
-    // Update dialog content
-    dialog.querySelector('h2').textContent = 'Upraviť investíciu';
-    submitButton.innerHTML = 'Aktualizovať';
-    submitButton.classList.replace('btn-proceed', 'btn-edit')
-
-    // Populate fields with the current investment data
-    titleInput.value = investment.title;
-    priceInput.value = investment.value;
-    typeSelect.value = investment.type;
-
-    dialog.showModal();
-
-    submitButton.onclick = function() {
-        // Update investment data logic here
-        investment.title = titleInput.value;
-        investment.value = priceInput.value;
-        investment.type = typeSelect.value;
-
-        // Save updated investment back to local storage
-        saveInvestments(investmentData);
-
-        dialog.close();
-        location.reload(); // Reload the page to refresh the table
-    };
-}
-
-// Function to save investments to local storage
-function saveInvestments(investments) {
-    localStorage.setItem('investments', JSON.stringify(investments));
-}
