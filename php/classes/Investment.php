@@ -110,4 +110,16 @@ class Investment
         $this->saveInvestments($investments);
     }
 
+    // DELETE
+    function deleteInvestment($id) {
+        $investments = $this->getInvestments();
+        foreach ($investments as $key => $investment) {
+            if ($investment['id'] == $id) {
+                unset($investments[$key]);
+                break;
+            }
+        }
+        $this->saveInvestments(array_values($investments)); // Reindex array
+    }
+
 }
