@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const investmentData = getInvestments()
 
-    // Populate the table dynamically with investment data
     const tableBody = document.querySelector('#investmentTable tbody');
     investmentData.forEach((item) => {
         const row = `
@@ -22,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
         tableBody.insertAdjacentHTML('beforeend', row);
     });
 
-    // Initialize DataTables with the new columns for Edit and Delete buttons
     new DataTable('#investmentTable', {
         paging: true,
         pageLength: 5,
@@ -33,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         responsive: true,
         columnDefs: [
             { targets: [1, 2, 3, 4, 5], className: 'dt-center' },
-            { targets: [4, 5], orderable: false }  // Make the last two columns (Edit/Delete) non-orderable
+            { targets: [4, 5], orderable: false }
         ],
     });
 
@@ -49,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.delete').forEach(button => {
         button.addEventListener('click', (e) => {
             const index = e.target.getAttribute('data-index');
-            // Implement your delete functionality here
             alert('Delete investment at index: ' + index);
         });
     });
