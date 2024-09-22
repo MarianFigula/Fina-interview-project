@@ -6,6 +6,7 @@
     --grey: #495057;
     --light-grey: #e9eaec;
     --green: #2a9d8f;
+    --hr-color: #adb5bd;
     --dark-green: #287271;
 }
 
@@ -100,6 +101,12 @@ nav {
         .donut {
             width: 400px;
         }
+    }
+    hr {
+        border: none;
+        height: 1px;
+        background-color: var(--hr-color);
+        margin: 20px 0;
     }
 
 }
