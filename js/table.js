@@ -35,11 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
     });
 
-    // Event listeners for Edit and Delete buttons
     document.querySelectorAll('.edit').forEach(button => {
         button.addEventListener('click', (e) => {
             const index = e.target.getAttribute('data-index');
-            // Implement your edit functionality here
             alert('Edit investment at index: ' + index);
         });
     });
