@@ -39,7 +39,12 @@ document.addEventListener('DOMContentLoaded', function() {
             plugins: {
                 legend: {
                     position: 'top',
-                    fullSize: true
+                    fullSize: true,
+                    labels: {
+                        font: {
+                            size: 14,
+                        }
+                    }
                 },
                 tooltip: {
                     callbacks: {
