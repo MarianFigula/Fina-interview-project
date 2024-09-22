@@ -5,7 +5,6 @@ div.dt-container .dt-paging .dt-paging-button.current,
 div.dt-container .dt-paging .dt-paging-button.current:hover{
     border: 1px solid var(--hr-color);
     border-radius: 10px;
-    /*color: black!important;*/
 }
 
 div.dt-container .dt-paging .dt-paging-button.current {
@@ -23,7 +22,6 @@ div.dt-container select.dt-input {
 }
 
 div.dt-container {
-    background: var(--light-grey);
     color: black;
     padding: 10px;
     border-radius: 15px;
