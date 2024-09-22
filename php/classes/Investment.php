@@ -7,6 +7,7 @@ class Investment
     private $value;
     private $percentage;
     private $date_of_creation;
+    private $type;
 
     // Constructor
     public function __construct($id, $title, $value, $percentage, $date_of_creation) {
@@ -49,6 +50,14 @@ class Investment
 
     public function setValue($value) {
         $this->value = $value;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
     }
 
     public function setPercentage($percentage) {
