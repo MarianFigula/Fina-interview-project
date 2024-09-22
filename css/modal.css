@@ -1,0 +1,65 @@
+/* General styles for the dialog */
+dialog {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    background-color: white;
+}
+
+/* Style the dialog header */
+dialog h2 {
+    margin: 0 0 15px;
+}
+
+/* Style for form labels */
+dialog label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+/* Style for input fields */
+dialog input[type="text"],
+dialog input[type="number"],
+dialog select {
+    width: 80%;
+    margin: 0 auto 15px auto;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Style the buttons */
+dialog button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+dialog button[type="submit"] {
+    background-color: var(--green);
+    color: white;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    &:hover {
+        background-color: var(--dark-green);
+    }
+}
+
+dialog button[type="button"] {
+    background-color: var(--danger);
+    color: white;
+}
+
+/* Change button hover effects */
+dialog button:hover {
+    opacity: 0.9;
+}
