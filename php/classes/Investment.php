@@ -67,4 +67,32 @@ class Investment
     public function setDateOfCreation($date_of_creation) {
         $this->date_of_creation = $date_of_creation;
     }
+    public function getInvestments() {
+        if (!file_exists('investments.json')) {
+            return [];
+        }
+        $json = file_get_contents('investments.json');
+        return json_decode($json, true);
+    }
+
+    public function getInvestmentById($id) {
+        $investments = $this->getInvestments();
+        foreach ($investments as $investment) {
+            if ($investment['id'] == $id) {
+                return $investment;
+            }
+        }
+        return null;
+    }
+
+    public function createInvestment($investment) {
+        $investments = $this->getInvestments();
+        $investments[] = $investment;
+        $this->saveInvestments($investments);
+    }
+
+    public function saveInvestments($investments) {
+        file_put_contents('investments.json', json_encode($investments, JSON_PRETTY_PRINT));
+    }
+
 }
