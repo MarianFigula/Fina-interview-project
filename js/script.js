@@ -1,20 +1,15 @@
+function getInvestments() {
+    return JSON.parse(localStorage.getItem('investments')) || [];
+}
+
 function updateTotalInvestment() {
-    // Retrieve the investment data from localStorage
-    const localStorageData = localStorage.getItem('investments');
-    let investmentData = [];
+    const investmentData = getInvestments();
 
-    if (localStorageData) {
-        investmentData = JSON.parse(localStorageData);
-    }
-
-    // Calculate the total price
     const totalPrice = investmentData.reduce((total, investment) => total + Number(investment.value), 0);
 
-    // Update the total investment display
     document.getElementById('total-investment').textContent = `${totalPrice}€`;
 
     return totalPrice
 }
 
-// Call the function to update the total price on page load
 document.addEventListener('DOMContentLoaded', updateTotalInvestment);

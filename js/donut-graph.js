@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const storedInvestments = JSON.parse(localStorage.getItem('investments')) || [];
+    const storedInvestments = getInvestments()
 
     const labels = storedInvestments.map(investment => investment.title);
     const percentages = storedInvestments.map(investment => investment.percentage);

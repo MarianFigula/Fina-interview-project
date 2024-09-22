@@ -1,11 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Your data from localStorage or elsewhere
-    const localStorageData = localStorage.getItem('investments');
-    let investmentData = [];
 
-    if (localStorageData) {
-        investmentData = JSON.parse(localStorageData);
-    }
+    const investmentData = getInvestments()
 
     // Populate the table dynamically with investment data
     const tableBody = document.querySelector('#investmentTable tbody');
