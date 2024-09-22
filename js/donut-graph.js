@@ -1,18 +1,18 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Retrieve the investment data from localStorage
-    const storedInvestments = JSON.parse(localStorage.getItem('investments'));
+    const storedInvestments = JSON.parse(localStorage.getItem('investments')) || [];
 
-    // Extract the labels and percentages
     const labels = storedInvestments.map(investment => investment.title);
     const percentages = storedInvestments.map(investment => investment.percentage);
+    const values = storedInvestments.map(investment => investment.value);
+
 
     const ctx = document.getElementById('investmentDonutChart').getContext('2d');
 
     const investmentData = {
-        labels: labels,  // Use labels from localStorage
+        labels: labels,
         datasets: [{
             label: 'Investment Portfolio',
-            data: percentages,  // Use percentages from localStorage
+            data: percentages,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.6)',
                 'rgba(54, 162, 235, 0.6)',
@@ -39,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
             plugins: {
                 legend: {
                     position: 'top',
-                    fullSize: true,
                     labels: {
                         font: {
                             size: 14,
@@ -49,7 +48,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 tooltip: {
                     callbacks: {
                         label: function(context) {
-                            return `${context.label}: ${context.raw}%`;
+                            const label = context.label || '';
+                            const percentage = context.raw;
+                            const value = values[context.dataIndex];
+                            return `${label}: ${value}€ (${percentage}%)`;
                         }
                     }
                 }
