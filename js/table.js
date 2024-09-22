@@ -17,10 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td>${item.percentage}%</td>
                 <td>${item.type}</td>
                 <td>
-                    <button class="edit-btn" data-index="${item.id}">Edit</button>
+                    <button class="edit-btn edit" data-index="${item.id}">Edit</button>
                 </td>
                 <td>
-                    <button class="delete-btn" data-index="${item.id}">Delete</button>
+                    <button class="delete-btn delete" data-index="${item.id}">Delete</button>
                 </td>
             </tr>
         `;
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Event listeners for Edit and Delete buttons
-    document.querySelectorAll('.edit-btn').forEach(button => {
+    document.querySelectorAll('.edit').forEach(button => {
         button.addEventListener('click', (e) => {
             const index = e.target.getAttribute('data-index');
             // Implement your edit functionality here
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    document.querySelectorAll('.delete-btn').forEach(button => {
+    document.querySelectorAll('.delete').forEach(button => {
         button.addEventListener('click', (e) => {
             const index = e.target.getAttribute('data-index');
             // Implement your delete functionality here
