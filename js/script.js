@@ -12,6 +12,8 @@ function updateTotalInvestment() {
 
     // Update the total investment display
     document.getElementById('total-investment').textContent = `${totalPrice}€`;
+
+    return totalPrice
 }
 
 // Call the function to update the total price on page load

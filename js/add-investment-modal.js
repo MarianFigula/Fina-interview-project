@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const openDialogButton = document.getElementById('invest-btn');
     const closeDialogButton = document.getElementById('closeDialog');
     const investmentForm = document.getElementById('addInvestmentForm');
+    const totalPortfolio = updateTotalInvestment()
 
     // Open the dialog when the button is clicked
     openDialogButton.onclick = function() {
@@ -26,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const investmentData = {
             title: title,
             value: price,
-            percentage: (price / 120000) * 100,
+            percentage: (price / totalPortfolio) * 100,
             type: type
         };
 
@@ -37,5 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         dialog.close();
         investmentForm.reset();
+        updateTotalInvestment();
     }
 });
