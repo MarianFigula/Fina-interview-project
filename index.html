@@ -9,6 +9,7 @@
     <script src="https://cdn.datatables.net/2.1.7/js/dataTables.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/modal.css">
 </head>
 <body>
 
@@ -21,11 +22,35 @@
     </nav>
 </header>
 
+
+<dialog id="addInvestmentDialog">
+    <form method="dialog" id="addInvestmentForm">
+        <h2>Pridať novú investíciu</h2>
+        <label for="title">Názov</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="price">Cena (€):</label>
+        <input type="number" id="price" name="price" required>
+
+        <label for="type">Typ investície</label>
+        <select id="type" name="type" required>
+            <option value="bonds">Dlhopisy</option>
+            <option value="shares">Akcie</option>
+            <option value="etfs">ETF</option>
+        </select>
+        <div>
+            <button type="submit" class="btn-proceed">Pridať</button>
+            <button type="button" id="closeDialog">Zavrieť</button>
+        </div>
+    </form>
+</dialog>
+
+
 <section class="main-wrapper">
     <div class="portfolio-header">
         <h2 class="" id="total-investment">120 000€</h2>
         <div class="button-wrapper">
-            <button>Investovať</button>
+            <button id="invest-btn" class="btn-proceed">Investovať</button>
         </div>
     </div>
     <div class="portfolio">
@@ -64,5 +89,6 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
 <script src="js/donut-graph.js" defer></script>
 <script src="js/table.js" defer></script>
+<script src="js/add-investment-modal.js"></script>
 </body>
 </html>
