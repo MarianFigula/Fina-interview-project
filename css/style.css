@@ -68,11 +68,13 @@ nav {
 }
 
 .main-wrapper{
-    border: 1px solid var(--grey);
+    background-color: var(--light-grey);
     width: 80%;
     padding: 1rem 3rem;
     margin: 150px auto 0 auto;
     border-radius: 15px;
+    box-shadow:  20px 20px 60px #c6c7c9,
+    -20px -20px 60px #ffffff;
     .portfolio-header{
         display: flex;
         justify-content: space-between;
@@ -90,4 +92,14 @@ nav {
             }
         }
     }
+    .portfolio {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        .donut {
+            width: 400px;
+        }
+    }
+
 }
