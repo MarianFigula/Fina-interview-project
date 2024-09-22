@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Investment dashboard</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.7/css/dataTables.dataTables.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/2.1.7/js/dataTables.min.js"></script>
 </head>
 <body>
 
@@ -34,10 +37,27 @@
         <div>
             <h2>Investície</h2>
         </div>
+        <table id="investmentTable" class="display" style="width:100%">
+            <thead>
+            <tr>
+                <th>Názov</th>
+                <th>Cena (€)</th>
+                <th>Percentuálny podiel</th>
+                <th>Typ</th>
+                <th>Upraviť</th>
+                <th>Vymazať</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Data will be inserted here -->
+            </tbody>
+        </table>
     </div>
 </section>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="js/donut-graph.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+<script src="js/donut-graph.js" defer></script>
+<script src="js/table.js" defer></script>
 </body>
 </html>
