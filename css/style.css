@@ -5,6 +5,8 @@
     --header-background-color: #181935;
     --grey: #495057;
     --light-grey: #e9eaec;
+    --green: #2a9d8f;
+    --dark-green: #287271;
 }
 
 
@@ -66,23 +68,25 @@ nav {
 }
 
 .main-wrapper{
-    margin-top: 150px;
+    border: 1px solid var(--grey);
+    width: 80%;
+    padding: 1rem 3rem;
+    margin: 150px auto 0 auto;
+    border-radius: 15px;
     .portfolio-header{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 80%;
-        margin: 0 auto;
         button {
             cursor: pointer;
             padding: 10px 15px;
-            background-color: var(--light-grey);
+            background-color: var(--dark-green);
+            color: white;
             border: none;
             border-radius: 10px;
             transition: all 0.3s ease;
             &:hover {
-                color: var(--light-grey);
-                background-color: var(--grey);
+                background-color: var(--green);
             }
         }
     }
