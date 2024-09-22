@@ -3,6 +3,8 @@
 
 :root{
     --header-background-color: #181935;
+    --grey: #495057;
+    --light-grey: #e9eaec;
 }
 
 
@@ -19,6 +21,12 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+h1 {
+    font-size: 2rem;
+}
+h2 {
+    font-size: 1.75rem;
+}
 
 header {
     background-color: var(--header-background-color);
@@ -52,6 +60,29 @@ nav {
                 &:hover{
                     cursor: pointer;
                 }
+            }
+        }
+    }
+}
+
+.main-wrapper{
+    margin-top: 150px;
+    .portfolio-header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        margin: 0 auto;
+        button {
+            cursor: pointer;
+            padding: 10px 15px;
+            background-color: var(--light-grey);
+            border: none;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            &:hover {
+                color: var(--light-grey);
+                background-color: var(--grey);
             }
         }
     }
