@@ -26,3 +26,17 @@ div.dt-container {
     padding: 10px;
     border-radius: 15px;
 }
+
+.btn-edit {
+    background-color: var(--warning);
+    &:hover {
+        background-color: var(--warning-hover);
+    }
+}
+
+.btn-delete {
+    background-color: var(--danger);
+    &:hover {
+        background-color: var(--danger-hover);
+    }
+}

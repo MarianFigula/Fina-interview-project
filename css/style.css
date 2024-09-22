@@ -130,27 +130,13 @@ nav {
 
 /* --- TABLE -- */
 
-.edit-btn, .delete-btn {
+.btn-edit, .btn-delete {
     padding: 10px;
     color: white;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease-out;
-}
-
-.edit-btn {
-    background-color: var(--warning);
-    &:hover {
-        background-color: var(--warning-hover);
-    }
-}
-
-.delete-btn {
-    background-color: var(--danger);
-    &:hover {
-        background-color: var(--danger-hover);
-    }
 }
 
 footer {
