@@ -68,11 +68,11 @@ nav {
 }
 
 .main-wrapper{
-    background-color: var(--light-grey);
     width: 80%;
     padding: 1rem 3rem;
     margin: 150px auto 0 auto;
     border-radius: 15px;
+    background: linear-gradient(145deg, #d2d3d4, #f9fafd);
     box-shadow:  20px 20px 60px #c6c7c9,
     -20px -20px 60px #ffffff;
     .portfolio-header{
