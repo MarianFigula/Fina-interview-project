@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
             responsive: true,
             plugins: {
                 legend: {
-                    position: 'right',
+                    position: 'top',
                     fullSize: true
                 },
                 tooltip: {
