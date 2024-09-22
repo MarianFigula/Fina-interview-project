@@ -35,6 +35,10 @@ h2 {
     font-size: 1.75rem;
 }
 
+h3 {
+    font-size: 1.5rem;
+}
+
 header {
     background-color: var(--header-background-color);
     color: white;
@@ -73,8 +77,8 @@ nav {
 }
 
 .main-wrapper{
-    width: 80%;
-    padding: 1rem 3rem;
+    width: 75%;
+    padding: 1rem 4rem;
     margin: 150px auto;
     border-radius: 15px;
     background: linear-gradient(145deg, #d2d3d4, #f9fafd);
@@ -83,6 +87,7 @@ nav {
     .portfolio-header{
         display: flex;
         justify-content: space-between;
+        margin: 0 5%;
         align-items: center;
         button {
             cursor: pointer;
@@ -104,7 +109,9 @@ nav {
         display: flex;
         justify-content: center;
         .donut {
-            width: 400px;
+            width: 500px;
+            min-height: 60vh;
+            padding-bottom: 2.5rem;
         }
     }
     hr {
