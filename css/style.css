@@ -8,6 +8,10 @@
     --green: #2a9d8f;
     --hr-color: #adb5bd;
     --dark-green: #287271;
+    --danger: #d90429;
+    --danger-hover: #9a031e;
+    --warning: #fbb02d;
+    --warning-hover: #ffc600
 }
 
 
@@ -109,4 +113,29 @@ nav {
         background-color: var(--hr-color);
     }
 
+}
+
+/* --- TABLE -- */
+
+.edit-btn, .delete-btn {
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+.edit-btn {
+    background-color: var(--warning);
+    &:hover {
+        background-color: var(--warning-hover);
+    }
+}
+
+.delete-btn {
+    background-color: var(--danger);
+    &:hover {
+        background-color: var(--danger-hover);
+    }
 }
