@@ -89,6 +89,12 @@ nav {
         justify-content: space-between;
         margin: 0 5%;
         align-items: center;
+        .total-investment{
+            padding: 10px;
+            border-radius: 15px;
+            background-color: var(--header-background-color);
+            color: white;
+        }
         button {
             cursor: pointer;
             font-size: 1rem;
