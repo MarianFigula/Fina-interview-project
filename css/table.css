@@ -1,0 +1,17 @@
+
+
+
+div.dt-container .dt-paging .dt-paging-button.current,
+div.dt-container .dt-paging .dt-paging-button.current:hover{
+    border: 1px solid var(--hr-color);
+    border-radius: 10px;
+}
+
+div.dt-container .dt-paging .dt-paging-button.current {
+    background: var(--light-grey);
+    transition: all 250ms ease-in-out;
+}
+
+div.dt-container .dt-paging .dt-paging-button.current:hover {
+    background: var(--hr-color);
+}
