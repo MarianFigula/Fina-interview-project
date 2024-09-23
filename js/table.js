@@ -56,11 +56,14 @@ document.addEventListener('DOMContentLoaded', async () => {
                     if (!response.ok) console.log("Server side error")
                     const result = await response.json();
 
-                    result.success
-                        ? alert('Investment deleted successfully')
-                        : alert('Error deleting investment');
+                    if (!result.success) {
+                        alert('Error deleting investment: ' + result.message);
+                        return
+                    }
 
-                    location.reload()
+                    alert('Investment deleted successfully');
+                    localStorage.setItem('investments', JSON.stringify(result.investments));
+                    location.reload();
                 } catch (error) {
                     console.error('Error:', error);
                 }
