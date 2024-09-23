@@ -35,3 +35,75 @@ and visualized with **Chart.js** and **DataTables**.
 - HTML, CSS, Javascript - Frontend
 - [Chart.js](https://www.chartjs.org/) - Data visualisation in donut graph
 - [Datatables](https://datatables.net/) - Data visualisation
+
+
+## API Endpoints
+
+1. Create investment (`/php/api/create.php`):
+
+Method: `POST`
+
+Request Body:
+
+```json
+{
+"title": "Investment Name",
+"value": 5000,
+"percentage": 20,
+"type": "Shares"
+}
+```
+Response:
+
+```json
+{
+"success": true,
+"message": "Investment successfully added",
+"newInvestment": { ... },
+"investments": { ... }
+}
+```
+
+2. Read Investments (`/php/api/read.php`):
+
+Method: `GET`
+
+Response: Returns all investments.
+
+3. Update Investment (`/php/api/update.php`):
+
+Method: `POST`
+
+Request Body: Investment data with the updated fields.
+
+Response:
+```json
+{
+  "success": true,
+  "investments": {investments}
+}
+```
+
+4. Delete Investment (`/php/api/delete.php`):
+
+Method: `POST`
+Request Body:
+
+```json
+{
+"id": 3
+}
+```
+
+Response:
+
+```json
+{
+  "success": true, 
+  "message": "Investment successfully deleted", 
+  "investments": {investments}
+}
+```
+
+The investments are returned in every 
+response to update the localstorage
