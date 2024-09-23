@@ -33,4 +33,5 @@ and visualized with **Chart.js** and **DataTables**.
 
 - PHP, JSON - Backend
 - HTML, CSS, Javascript - Frontend
-- Chart.js, Datatables - Libraries for visualisation
+- [Chart.js](https://www.chartjs.org/) - Data visualisation
+- [Datatables](https://datatables.net/) - Data visualisation
