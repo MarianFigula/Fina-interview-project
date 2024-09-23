@@ -19,3 +19,11 @@ and visualized with **Chart.js** and **DataTables**.
 - Form submission for adding or updating
 - Validation of user inputs on backend and frontend side
 
+### Investment columns
+
+- *id* - investment id
+- *title* - investment title
+- *value* - value of investment
+- *percentage* - percentage share of investment in portfolio
+- *type* - type of investment (**Bonds**, **Shares**, **ETFs**)
+- *date_of_creation* - when the investment was created
