@@ -116,7 +116,6 @@ nav {
         justify-content: center;
         .donut {
             width: 500px;
-            min-height: 60vh;
             padding-bottom: 2.5rem;
         }
     }
