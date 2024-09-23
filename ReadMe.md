@@ -33,5 +33,5 @@ and visualized with **Chart.js** and **DataTables**.
 
 - PHP, JSON - Backend
 - HTML, CSS, Javascript - Frontend
-- [Chart.js](https://www.chartjs.org/) - Data visualisation
+- [Chart.js](https://www.chartjs.org/) - Data visualisation in donut graph
 - [Datatables](https://datatables.net/) - Data visualisation
