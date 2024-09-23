@@ -95,29 +95,3 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
 });
-
-
-async function updateInvestment(updatedInvestment) {
-    try {
-        const response = await fetch('/php/api/investment/update.php', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(updatedInvestment),
-        });
-
-        if (!response.ok) {
-            console.error('Server side error')
-        }
-
-        const result = await response.json();
-        if (!result.success) {
-            alert('Error updating investment: ' + result.message);
-        } else {
-            alert('Investment updated successfully');
-            localStorage.setItem('investments', JSON.stringify(result.investments));
-            location.reload();
-        }
-    } catch (error) {
-        console.error('Error:', error);
-    }
-}
