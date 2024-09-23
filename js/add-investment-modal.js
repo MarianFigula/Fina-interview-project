@@ -6,20 +6,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitButton = document.querySelector('dialog button[type="submit"]')
     const totalPortfolio = updateTotalInvestment()
 
-    openDialogButton.onclick = function() {
+    openDialogButton.onclick = function () {
         submitButton.classList.replace('btn-edit', 'btn-proceed')
         investmentForm.reset()
         dialog.showModal();
     }
 
-    dialog.addEventListener('click', function(event) {
+    dialog.addEventListener('click', function (event) {
         if (event.target === dialog || event.target === closeDialogButton) {
             clearErrors()
             dialog.close();
         }
     });
 
-    investmentForm.onsubmit = async function(event) {
+    investmentForm.onsubmit = async function (event) {
         event.preventDefault();
 
         if (!validateForm()) {
@@ -42,9 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
         investmentForm.reset();
         await updateTotalInvestment();
     }
-
-
-
 });
 
 
