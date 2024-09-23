@@ -27,3 +27,10 @@ and visualized with **Chart.js** and **DataTables**.
 - *percentage* - percentage share of investment in portfolio
 - *type* - type of investment (**Bonds**, **Shares**, **ETFs**)
 - *date_of_creation* - when the investment was created
+
+
+## Technologies
+
+- PHP, JSON - Backend
+- HTML, CSS, Javascript - Frontend
+- Chart.js, Datatables - Libraries for visualisation
