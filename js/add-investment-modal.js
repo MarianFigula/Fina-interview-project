@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    investmentForm.onsubmit = function(event) {
+    investmentForm.onsubmit = async function(event) {
         event.preventDefault();
 
         if (!validateForm()) {
@@ -41,6 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         dialog.close();
         investmentForm.reset();
-        updateTotalInvestment();
+        await updateTotalInvestment();
     }
 });
