@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     new DataTable('#investmentTable', {
         paging: true,
-        pageLength: 5,
+        pageLength: 10,
         lengthMenu: [5, 10, 25],
         ordering: true,
         order: [[1, 'desc']],
