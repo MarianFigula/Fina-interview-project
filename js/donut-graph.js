@@ -1,5 +1,5 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const storedInvestments = getInvestments()
+document.addEventListener('DOMContentLoaded', async () => {
+    const storedInvestments = await getInvestments()
 
     const labels = storedInvestments.map(investment => investment.title);
     const percentages = storedInvestments.map(investment => investment.percentage);
@@ -59,5 +59,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    const investmentDonutChart = new Chart(ctx, config);
+    new Chart(ctx, config);
 });

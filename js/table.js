@@ -1,6 +1,6 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
 
-    const investmentData = getInvestments()
+    const investmentData = await getInvestments()
 
     const tableBody = document.querySelector('#investmentTable tbody');
     investmentData.forEach((item) => {

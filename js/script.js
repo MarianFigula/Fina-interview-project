@@ -1,6 +1,6 @@
 
-function updateTotalInvestment() {
-    const investmentData = getInvestments();
+async function updateTotalInvestment() {
+    const investmentData = await getInvestments();
 
     const totalPrice = investmentData.reduce((total, investment) => total + Number(investment.value), 0);
     document.getElementById('total-investment').textContent = `${totalPrice}€`;
