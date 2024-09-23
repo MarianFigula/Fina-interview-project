@@ -1,6 +1,3 @@
-function getInvestments() {
-    return JSON.parse(localStorage.getItem('investments')) || [];
-}
 
 function updateTotalInvestment() {
     const investmentData = getInvestments();
