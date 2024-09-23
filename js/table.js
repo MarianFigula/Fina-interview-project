@@ -77,7 +77,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         const titleInput = document.getElementById('title');
         const priceInput = document.getElementById('price');
         const typeSelect = document.getElementById('type');
-        const submitButton = document.querySelector('.btn-proceed');
+        const submitButton = document.getElementById('submit-button');
+        const totalPortfolio = updateTotalInvestment()
 
         // Update dialog content
         dialog.querySelector('h2').textContent = 'Upraviť investíciu';
@@ -88,26 +89,57 @@ document.addEventListener('DOMContentLoaded', async () => {
         priceInput.value = investment.value;
         typeSelect.value = investment.type;
 
+        console.log("ID", investment.id)
+
         dialog.showModal();
 
-        // TODO: treba aj idecko a je to upate cize najst ten predosly a vymenit
-        //  mu data podla idecka ale to skor asi na backende az
+        submitButton.onclick = async function(event) {
+            event.preventDefault(); // Prevent form submission
 
+            if (!validateForm()) {
+                return;
+            }
 
-        submitButton.onclick = function() {
-            validateForm()
-            investment.title = titleInput.value;
-            investment.value = priceInput.value;
-            investment.type = typeSelect.value;
+            const updatedInvestment = {
+                id: investment.id,
+                title: titleInput.value,
+                value: priceInput.value,
+                type: typeSelect.value,
+                percentage: ((priceInput.value / totalPortfolio) * 100).toFixed(2)
+            };
 
-            saveInvestments(investmentData);
+            await updateInvestment(updatedInvestment);
 
             dialog.close();
+            investmentForm.reset();
             location.reload();
         };
     }
 
-    function saveInvestments(investments) {
-        // poslat na backend
-    }
 });
+
+
+async function updateInvestment(updatedInvestment) {
+    try {
+        const response = await fetch('/php/api/investment/update.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(updatedInvestment),
+        });
+
+        if (!response.ok) {
+            console.error('Server side error')
+        }
+
+        const result = await response.json();
+        if (!result.success) {
+            alert('Error updating investment: ' + result.message);
+        } else {
+            alert('Investment updated successfully');
+            localStorage.setItem('investments', JSON.stringify(result.investments));
+            location.reload();
+        }
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
