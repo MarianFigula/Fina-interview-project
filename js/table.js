@@ -80,7 +80,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         const submitButton = document.getElementById('submit-button');
         const totalPortfolio = updateTotalInvestment()
 
-        // Update dialog content
         dialog.querySelector('h2').textContent = 'Upraviť investíciu';
         submitButton.innerHTML = 'Aktualizovať';
         submitButton.classList.replace('btn-proceed', 'btn-edit')
@@ -94,7 +93,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         dialog.showModal();
 
         submitButton.onclick = async function(event) {
-            event.preventDefault(); // Prevent form submission
+            event.preventDefault();
 
             if (!validateForm()) {
                 return;

@@ -5,15 +5,14 @@ class Investment
 
     public function __construct() {}
 
-    public function calculatePercentages(&$investments) {
+    public function calculatePercentages(&$investments): void
+    {
         $totalValue = 0;
 
-        // First, calculate the total value of all investments
         foreach ($investments as $investment) {
             $totalValue += $investment['value'];
         }
 
-        // Then, calculate the percentage for each investment
         foreach ($investments as &$investment) {
             $investment['percentage'] =
                 round(($investment['value'] / $totalValue) * 100, 2);
@@ -32,21 +31,24 @@ class Investment
     }
 
     // CREATE
-    public function createInvestment($investment) {
+    public function createInvestment($investment): void
+    {
         $investments = $this->getInvestments();
         $investments[] = $investment;
         $this->calculatePercentages($investments);
         $this->saveInvestments($investments);
     }
 
-    public function saveInvestments($investments) {
+    public function saveInvestments($investments): void
+    {
         $filePath = __DIR__ . '/../../data/investments.json';
         file_put_contents($filePath,
             json_encode($investments, JSON_PRETTY_PRINT));
     }
 
     // UPDATE
-    public function updateInvestment($updatedInvestment) {
+    public function updateInvestment($updatedInvestment): void
+    {
         $investments = $this->getInvestments();
         foreach ($investments as $key => $investment) {
             if ($investment['id'] == $updatedInvestment['id']) {
@@ -59,7 +61,8 @@ class Investment
     }
 
     // DELETE
-    function deleteInvestment($id) {
+    function deleteInvestment($id): void
+    {
         $investments = $this->getInvestments();
         foreach ($investments as $key => $investment) {
             if ($investment['id'] == $id) {
