@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const row = `
             <tr>
                 <td>${item.title}</td>
-                <td>${item.value}</td>
+                <td>${item.value} €</td>
                 <td>${item.percentage}%</td>
                 <td>${item.type}</td>
                 <td>
