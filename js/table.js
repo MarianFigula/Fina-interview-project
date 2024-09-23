@@ -68,8 +68,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         dialog.showModal();
 
+        // TODO: treba aj idecko a je to upate cize najst ten predosly a vymenit
+        //  mu data podla idecka ale to skor asi na backende az
+
+
         submitButton.onclick = function() {
-            // Update investment data logic here
+            validateForm()
             investment.title = titleInput.value;
             investment.value = priceInput.value;
             investment.type = typeSelect.value;
@@ -82,6 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function saveInvestments(investments) {
-        localStorage.setItem('investments', JSON.stringify(investments));
+        // poslat na backend
     }
 });
