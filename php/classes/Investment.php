@@ -2,62 +2,8 @@
 
 class Investment
 {
-    private $id;
-    private string $title;
-    private $value;
-    private $percentage;
-    private $date_of_creation;
-    private $type;
 
     public function __construct() {}
-
-    public function getId() {
-        return $this->id;
-    }
-
-    public function getTitle() {
-        return $this->title;
-    }
-
-    public function getValue() {
-        return $this->value;
-    }
-
-    public function getPercentage() {
-        return $this->percentage;
-    }
-
-    public function getDateOfCreation() {
-        return $this->date_of_creation;
-    }
-
-    public function setId($id) {
-        $this->id = $id;
-    }
-
-    public function setTitle($title) {
-        $this->title = $title;
-    }
-
-    public function setValue($value) {
-        $this->value = $value;
-    }
-
-    public function getType() {
-        return $this->type;
-    }
-
-    public function setType($type) {
-        $this->type = $type;
-    }
-
-    public function setPercentage($percentage) {
-        $this->percentage = $percentage;
-    }
-
-    public function setDateOfCreation($date_of_creation) {
-        $this->date_of_creation = $date_of_creation;
-    }
 
     public function calculatePercentages(&$investments) {
         $totalValue = 0;
@@ -83,16 +29,6 @@ class Investment
         }
         $json = file_get_contents($filePath);
         return json_decode($json, true);
-    }
-
-    public function getInvestmentById($id) {
-        $investments = $this->getInvestments();
-        foreach ($investments as $investment) {
-            if ($investment['id'] == $id) {
-                return $investment;
-            }
-        }
-        return null;
     }
 
     // CREATE
