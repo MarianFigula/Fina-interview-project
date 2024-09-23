@@ -61,10 +61,11 @@ class Investment
 
     // READ
     public function getInvestments() {
-        if (!file_exists('investments.json')) {
+        $filePath = __DIR__ . '/../../data/investments.json';
+        if (!file_exists($filePath)) {
             return [];
         }
-        $json = file_get_contents('investments.json');
+        $json = file_get_contents($filePath);
         return json_decode($json, true);
     }
 
