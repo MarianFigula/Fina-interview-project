@@ -59,6 +59,22 @@ class Investment
         $this->date_of_creation = $date_of_creation;
     }
 
+    public function calculatePercentages(&$investments) {
+        $totalValue = 0;
+
+        // First, calculate the total value of all investments
+        foreach ($investments as $investment) {
+            $totalValue += $investment['value'];
+        }
+
+        // Then, calculate the percentage for each investment
+        foreach ($investments as &$investment) {
+            $investment['percentage'] =
+                round(($investment['value'] / $totalValue) * 100, 2);
+
+        }
+    }
+
     // READ
     public function getInvestments() {
         $filePath = __DIR__ . '/../../data/investments.json';
@@ -83,11 +99,14 @@ class Investment
     public function createInvestment($investment) {
         $investments = $this->getInvestments();
         $investments[] = $investment;
+        $this->calculatePercentages($investments);
         $this->saveInvestments($investments);
     }
 
     public function saveInvestments($investments) {
-        file_put_contents('investments.json', json_encode($investments, JSON_PRETTY_PRINT));
+        $filePath = __DIR__ . '/../../data/investments.json';
+        file_put_contents($filePath,
+            json_encode($investments, JSON_PRETTY_PRINT));
     }
 
     // UPDATE
@@ -99,6 +118,7 @@ class Investment
                 break;
             }
         }
+        $this->calculatePercentages($investments);
         $this->saveInvestments($investments);
     }
 
@@ -111,7 +131,9 @@ class Investment
                 break;
             }
         }
-        $this->saveInvestments(array_values($investments)); // Reindex array
+        $investments = array_values($investments);
+        $this->calculatePercentages($investments);
+        $this->saveInvestments($investments);
     }
 
 }
