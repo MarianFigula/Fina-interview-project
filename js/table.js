@@ -111,7 +111,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             await updateInvestment(updatedInvestment);
 
             dialog.close();
-            investmentForm.reset();
             location.reload();
         };
     }
