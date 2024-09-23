@@ -6,7 +6,7 @@ const getInvestments = async () => {
     }
 
     try {
-        const response = await fetch('/api/investment/read.php');
+        const response = await fetch('/php/api/investment/read.php');
 
         if (!response.ok) console.log("Server side error")
 
