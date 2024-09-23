@@ -9,16 +9,8 @@ class Investment
     private $date_of_creation;
     private $type;
 
-    // Constructor
-    public function __construct($id, $title, $value, $percentage, $date_of_creation) {
-        $this->id = $id;
-        $this->title = $title;
-        $this->value = $value;
-        $this->percentage = $percentage;
-        $this->date_of_creation = $date_of_creation;
-    }
+    public function __construct() {}
 
-    // Getters
     public function getId() {
         return $this->id;
     }
@@ -39,7 +31,6 @@ class Investment
         return $this->date_of_creation;
     }
 
-    // Setters
     public function setId($id) {
         $this->id = $id;
     }
