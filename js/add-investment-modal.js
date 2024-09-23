@@ -2,12 +2,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const dialog = document.getElementById('addInvestmentDialog');
     const openDialogButton = document.getElementById('invest-btn');
     const closeDialogButton = document.getElementById('closeDialog');
-    const investmentForm = document.getElementById('addInvestmentForm');
+    const investmentForm = document.getElementById('investmentForm');
     const submitButton = document.querySelector('dialog button[type="submit"]')
     const totalPortfolio = updateTotalInvestment()
 
     openDialogButton.onclick = function() {
         submitButton.classList.replace('btn-edit', 'btn-proceed')
+        investmentForm.reset()
         dialog.showModal();
     }
 
