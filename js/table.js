@@ -46,27 +46,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         button.addEventListener('click', async (e) => {
             const id = e.target.getAttribute('data-index');
             if (confirm('Are you sure you want to delete this investment?')) {
-                try {
-                    const response = await fetch('/php/api/investment/delete.php', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ id }),
-                    });
-
-                    if (!response.ok) console.log("Server side error")
-                    const result = await response.json();
-
-                    if (!result.success) {
-                        alert('Error deleting investment: ' + result.message);
-                        return
-                    }
-
-                    alert('Investment deleted successfully');
-                    localStorage.setItem('investments', JSON.stringify(result.investments));
-                    location.reload();
-                } catch (error) {
-                    console.error('Error:', error);
-                }
+                await deleteInvestment()
             }
         });
     });
