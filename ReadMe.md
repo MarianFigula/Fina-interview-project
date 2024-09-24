@@ -10,6 +10,17 @@ The project uses JavaScript for the frontend and PHP for the backend.
 Data is stored locally in **JSON files** and **localStorage**,
 and visualized with **Chart.js** and **DataTables**.
 
+
+### ⚠️  Important
+> This application uses **fetch** to interact with the PHP backend.
+> For security reasons, most modern browsers block cross-origin
+> requests made from **file://** URLs. 
+> If you try to run the application by directly opening the HTML files
+> from the file system, you will likely encounter the app to not work.
+> 
+> **U have to use web server request from http:// or https://
+> like http://localhost** 
+
 ## Features
 
 - CRUD (Create, Read, Update, Delete) operations on investments
