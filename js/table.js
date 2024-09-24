@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         button.addEventListener('click', async (e) => {
             const id = e.target.getAttribute('data-index');
             if (confirm('Are you sure you want to delete this investment?')) {
-                await deleteInvestment()
+                await deleteInvestment(id)
             }
         });
     });

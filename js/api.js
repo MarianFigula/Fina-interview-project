@@ -79,7 +79,7 @@ const updateInvestment = async (updatedInvestment) => {
 }
 
 // DELETE
-async function deleteInvestment() {
+async function deleteInvestment(id) {
     try {
         const response = await fetch('/php/api/investment/delete.php', {
             method: 'POST',
@@ -100,5 +100,6 @@ async function deleteInvestment() {
         location.reload();
     } catch (error) {
         console.error('Error:', error);
+        alert('Error deleting investment: ' + error.message);
     }
 }
