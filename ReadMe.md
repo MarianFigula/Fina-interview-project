@@ -106,4 +106,4 @@ Response:
 ```
 
 The investments are returned in every 
-response to update the localstorage
+response to update the localstorage.
