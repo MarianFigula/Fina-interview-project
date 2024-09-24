@@ -8,35 +8,41 @@ dialog {
     margin-right: auto;
     width: 90%;
     background-color: white;
+    h2 {
+        margin: 0 0 15px;
+    }
+    label {
+        display: block;
+        margin: 10px 0 5px;
+    }
+    input[type="text"],
+    input[type="number"],
+    select {
+        width: 80%;
+        margin: 0 auto 15px auto;
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid var(--light-grey);
+    }
+
+    button {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    button[type="button"] {
+        background-color: var(--danger);
+        border-radius: 10px;
+        color: white;
+        &:hover {
+            opacity: 0.9;
+        }
+    }
 }
 
-dialog h2 {
-    margin: 0 0 15px;
-}
-
-dialog label {
-    display: block;
-    margin: 10px 0 5px;
-}
-
-dialog input[type="text"],
-dialog input[type="number"],
-dialog select {
-    width: 80%;
-    margin: 0 auto 15px auto;
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid var(--light-grey);
-}
-
-
-dialog button {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-right: 10px;
-}
 
 .btn-proceed{
     background-color: var(--green);
@@ -46,16 +52,6 @@ dialog button {
     &:hover {
         background-color: var(--dark-green);
     }
-}
-
-dialog button[type="button"] {
-    background-color: var(--danger);
-    border-radius: 10px;
-    color: white;
-}
-
-dialog button:hover {
-    opacity: 0.9;
 }
 
 .error {
